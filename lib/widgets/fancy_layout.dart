@@ -6,6 +6,12 @@ class FancyLayout extends StatelessWidget {
   final Color contentBackgroundColor;
   final String sectionTitle;
   final Widget layout;
+
+  ///Used for the curved layout
+  ///[backgroundColor] the color behind  the card - default Colors.indigo
+  ///[contentBackgroundColor] the color in the card - default Colors.white
+  ///[sectionTitle] the title displayed on top of the card
+  ///[layout] the Widget that will be displayed in the c
   const FancyLayout(
       {Key? key,
       this.backgroundColor = Colors.indigo,
