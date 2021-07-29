@@ -7,10 +7,12 @@ class SuccessPage extends StatelessWidget {
   static const routeName = '/error';
   final String message;
   final bool isEligible;
+  final int eligibleScore;
   const SuccessPage(
       {Key? key,
       this.message = 'Operatiune finalizata cu succes!',
-      this.isEligible = false})
+      this.isEligible = false,
+      this.eligibleScore = 1})
       : super(key: key);
 
   @override
@@ -38,6 +40,17 @@ class SuccessPage extends StatelessWidget {
               Flexible(
                 child: Text(
                   message,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                ),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                child: Text(
+                  'Scorul obtinut este $eligibleScore',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                 ),
               )

@@ -101,6 +101,7 @@ class _PersonalDataPageState extends State<PersonalDataPage> {
                                                 ? 'Sunteti eligibil'
                                                 : 'Nu sunteti eligibil',
                                             isEligible: value > 5,
+                                            eligibleScore: value,
                                           )),
                                 );
                               }
