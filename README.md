@@ -3,12 +3,12 @@ App demo for MyCreditLoans company.
 ### Stay Home, Stay Safe!
 
 # Interface
-<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/assets/images/1.png" width="250">
-<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/assets/images/2.png" width="250">
-<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/assets/images/3.png" width="250">
-<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/assets/images/4.png" width="250">
-<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/assets/images/5.png" width="250">
-<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/assets/images/6.png" width="250">
+<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/1.png" width="250">
+<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/2.png" width="250">
+<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/3.png" width="250">
+<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/4.png" width="250">
+<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/5.png" width="250">
+<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/6.png" width="250">
 
 
 
