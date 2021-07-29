@@ -3,7 +3,7 @@ App demo for MyCreditLoans company.
 ### Stay Home, Stay Safe!
 
 # Interface
-<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/1.png" width="250">
+<img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/1.PNG" width="250">
 <img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/2.png" width="250">
 <img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/3.png" width="250">
 <img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/4.png" width="250">
