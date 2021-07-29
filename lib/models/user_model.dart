@@ -1,12 +1,14 @@
+import 'package:my_credit_loans/enum/time_period.dart';
+
 class UserModel {
   int moneyAmount;
-  int periodOfTime;
-  double monthlyRate;
+  TimePeriod periodOfTime;
   String firstName;
   String lastName;
   bool isEmployeed;
   String? currentJob;
   double monthlyIncome;
+  bool isEligible;
 
   UserModel(
       {required this.moneyAmount,
@@ -16,7 +18,5 @@ class UserModel {
       required this.lastName,
       required this.isEmployeed,
       this.currentJob,
-      required this.monthlyRate});
-
-      
+      this.isEligible = false});
 }

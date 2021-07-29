@@ -15,4 +15,25 @@ extension TimePeriodExtension on TimePeriod {
         return '';
     }
   }
+
+  int get numberOfMonths {
+    switch (this) {
+      case TimePeriod.ONE_MONTH:
+        return 1;
+      case TimePeriod.THREE_MONTHS:
+        return 3;
+      case TimePeriod.SIX_MONTHS:
+        return 6;
+      case TimePeriod.ONE_YEAR:
+        return 12;
+    }
+  }
+
+  List<String> get allNames {
+    List<String> allNames = [];
+    TimePeriod.values.forEach((element) {
+      allNames.add(element.name);
+    });
+    return allNames;
+  }
 }

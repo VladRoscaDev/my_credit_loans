@@ -24,13 +24,14 @@ class CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      brightness: Brightness.dark,
       elevation: widget.elevation,
       backgroundColor: widget.backgroundColor,
       title: widget.title != null
           ? Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
                   widget.title!,
                   style: TextStyle(
                     color: Colors.white,
@@ -38,8 +39,8 @@ class CustomAppBarState extends State<CustomAppBar> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-            ],
-          )
+              ],
+            )
           : Container(),
     );
   }
