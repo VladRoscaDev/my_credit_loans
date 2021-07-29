@@ -4,7 +4,7 @@ import 'package:my_credit_loans/pages/landing_page.dart';
 import 'package:my_credit_loans/widgets/app_button.dart';
 
 class SuccessPage extends StatelessWidget {
-  static const routeName = '/error';
+  static const routeName = '/success';
   final String message;
   final bool isEligible;
   final int eligibleScore;
