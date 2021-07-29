@@ -1,6 +1,5 @@
 # MyCreditLoans :biohazard:
 App demo for MyCreditLoans company.
-### Stay Home, Stay Safe!
 
 # Interface
 <img src="https://raw.githubusercontent.com/VladRoscaDev/my_credit_loans/master/images/1.PNG" width="250">
