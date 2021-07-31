@@ -45,24 +45,7 @@ class _LandingPageState extends State<LandingPage> {
                 SizedBox(
                   height: context.height * 0.1,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Rata lunara:',
-                        style: TextStyle(
-                            fontWeight: FontWeight.normal, fontSize: 22),
-                      ),
-                      Text(
-                        '${MonthlyRateService.computeMonthlyRate(_moneyValue, _timePeriod).toStringAsFixed(4)}',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 22),
-                      )
-                    ],
-                  ),
-                )
+                _buildMonthlyRateField()
               ],
             ),
           ),
@@ -75,6 +58,25 @@ class _LandingPageState extends State<LandingPage> {
                 arguments: {_moneyValue, _timePeriod});
           },
         ));
+  }
+
+  Padding _buildMonthlyRateField() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            'Rata lunara:',
+            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 22),
+          ),
+          Text(
+            '${MonthlyRateService.computeMonthlyRate(_moneyValue, _timePeriod).toStringAsFixed(4)}',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          )
+        ],
+      ),
+    );
   }
 
   Padding _buildPeriodDropDown() {

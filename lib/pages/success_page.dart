@@ -21,41 +21,12 @@ class SuccessPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: context.width * 0.7,
-            height: context.height * 0.3,
-            child: Image.asset(
-              isEligible
-                  ? 'assets/images/success.png'
-                  : 'assets/images/refuse.png',
-              fit: BoxFit.fitHeight,
-            ),
-          ),
+          _buildSuccessImage(context),
           SizedBox(
             height: context.height * 0.1,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Flexible(
-                child: Text(
-                  message,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-                ),
-              )
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Flexible(
-                child: Text(
-                  'Scorul obtinut este $eligibleScore',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-                ),
-              )
-            ],
-          ),
+          _buildSuccessMessage(),
+          _buildScore(),
           SizedBox(
             height: context.height * 0.1,
           ),
@@ -66,6 +37,45 @@ class SuccessPage extends StatelessWidget {
                     .pushReplacementNamed(LandingPage.routeName);
               })
         ],
+      ),
+    );
+  }
+
+  Row _buildScore() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Flexible(
+          child: Text(
+            'Scorul obtinut este $eligibleScore',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          ),
+        )
+      ],
+    );
+  }
+
+  Row _buildSuccessMessage() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Flexible(
+          child: Text(
+            message,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          ),
+        )
+      ],
+    );
+  }
+
+  Container _buildSuccessImage(BuildContext context) {
+    return Container(
+      width: context.width * 0.7,
+      height: context.height * 0.3,
+      child: Image.asset(
+        isEligible ? 'assets/images/success.png' : 'assets/images/refuse.png',
+        fit: BoxFit.fitHeight,
       ),
     );
   }

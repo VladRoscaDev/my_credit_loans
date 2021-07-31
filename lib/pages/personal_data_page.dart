@@ -29,8 +29,6 @@ class _PersonalDataPageState extends State<PersonalDataPage> {
   XFile? _image;
   bool hasImageFromCamera = false;
   bool hasImageFromGallery = false;
-  int? _moneyAmount;
-  TimePeriod? _timePeriod;
 
   final _firstNameFocusNode = FocusNode();
   final _monthlyIncomeFocusNode = FocusNode();
@@ -85,42 +83,13 @@ class _PersonalDataPageState extends State<PersonalDataPage> {
                                 .checkEligibility(context)
                                 .then((value) {
                               if (value == 0) {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) => ErrorPage(
-                                      message:
-                                          'Atentie, a aparut o eroare la conexiune catre server, va rugam sa reincercati!',
-                                    ),
-                                  ),
-                                );
+                                _goToErrorPage(context);
                               } else {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (context) => SuccessPage(
-                                            message: value > 5
-                                                ? 'Sunteti eligibil'
-                                                : 'Nu sunteti eligibil',
-                                            isEligible: value > 5,
-                                            eligibleScore: value,
-                                          )),
-                                );
+                                _goToSuccessPage(context, value);
                               }
                             });
                           } else {
-                            showDialog(
-                                context: context,
-                                builder: (_) => AlertDialog(
-                                      title: Text('Atentit'),
-                                      content: Text(
-                                          'Este obligatoriu sa introduceti o fotografie a ultimei facturi!'),
-                                      actions: [
-                                        TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                            child: Text('OK'))
-                                      ],
-                                    ));
+                            _showErrorDialog(context);
                           }
                         }
                       })
@@ -133,6 +102,45 @@ class _PersonalDataPageState extends State<PersonalDataPage> {
           ),
         ),
       ),
+    );
+  }
+
+  Future<dynamic> _showErrorDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+              title: Text('Atentit'),
+              content: Text(
+                  'Este obligatoriu sa introduceti o fotografie a ultimei facturi!'),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('OK'))
+              ],
+            ));
+  }
+
+  Future<dynamic> _goToErrorPage(BuildContext context) {
+    return Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => ErrorPage(
+          message:
+              'Atentie, a aparut o eroare la conexiune catre server, va rugam sa reincercati!',
+        ),
+      ),
+    );
+  }
+
+  Future<dynamic> _goToSuccessPage(BuildContext context, int value) {
+    return Navigator.of(context).push(
+      MaterialPageRoute(
+          builder: (context) => SuccessPage(
+                message: value > 5 ? 'Sunteti eligibil' : 'Nu sunteti eligibil',
+                isEligible: value > 5,
+                eligibleScore: value,
+              )),
     );
   }
 
